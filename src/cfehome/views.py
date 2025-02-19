@@ -11,5 +11,6 @@ def home_page_view(request, *args, **kwargs):
         "page_title": my_title,
         "page_view_count": queryset.count()
     }
+    PageVisit.objects.create()
     html_template = 'home.html'
     return render(request, html_template, my_context)
